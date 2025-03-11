@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Pendaftaran</title>
+    <!-- CSS Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="container bg-white p-4 rounded shadow-sm" style="max-width: 500px;">
+        <h2 class="text-center">Formulir Pendaftaran</h2>
+        <form action="#" method="POST">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nama:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Kata Sandi:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Jenis Kelamin:</label>
+                <div class="form-check">
+                    <input type="radio" id="male" name="gender" value="male" class="form-check-input" required>
+                    <label for="male" class="form-check-label">Laki-laki</label>
+                </div>
+                <div class="form-check">
+                    <input type="radio" id="female" name="gender" value="female" class="form-check-input" required>
+                    <label for="female" class="form-check-label">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Hobi:</label>
+                <div class="form-check">
+                    <input type="checkbox" id="reading" name="hobby" value="reading" class="form-check-input">
+                    <label for="reading" class="form-check-label">Membaca</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="sports" name="hobby" value="sports" class="form-check-input">
+                    <label for="sports" class="form-check-label">Olahraga</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="country" class="form-label">Negara:</label>
+                <select id="country" name="country" class="form-select">
+                    <option value="Indonesia">Indonesia</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Singapura">Singapura</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label for="message" class="form-label">Pesan:</label>
+                <textarea id="message" name="message" rows="4" class="form-control"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Kirim</button>
+        </form>
+        <p class="text-center mt-3">Apakah sudah punya akun? <a href="login.html" class="text-decoration-none">Login di sini</a></p>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form dikirim secara default
+            window.location.href = "login.html"; // Redirect ke halaman dasbor
+        });
+    </script>
+
+</body>
+</html>

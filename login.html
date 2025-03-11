@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Halaman Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex justify-content-center align-items-center vh-100 bg-light">
+    <div class="container bg-white p-4 rounded shadow-sm" style="max-width: 400px;">
+        <h2 class="text-center">Login</h2>
+        <form method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="password" class="form-label">Kata Sandi:</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+
+            <div class="d-flex justify-content-between mb-3">
+                <a href="lupa-sandi.html" class="text-decoration-none">Lupa Kata Sandi?</a>
+                <a href="daftar.html" class="text-decoration-none">Daftar</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Mencegah form dikirim secara default
+            let email = document.getElementById("email").value; // Ambil nilai email
+            window.location.href = `dasbor.html?user=${encodeURIComponent(email)}`; // Redirect dengan parameter email
+        });
+    </script>
+    
+
+</body>
+</html>
